@@ -78,6 +78,6 @@
 	<scm>
 		<developerConnection>scm:git:https://github.com/carmenvchirica/sfg-pet-clinic.git</developerConnection>
 	  <tag>sfg-pet-clinic-0.0.1</tag>
-  </scm>
+  	</scm>
 
 </project>
