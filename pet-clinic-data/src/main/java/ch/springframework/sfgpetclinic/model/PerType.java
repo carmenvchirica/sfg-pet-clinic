@@ -1,4 +1,4 @@
 package ch.springframework.sfgpetclinic.model;
 
-public class PerType {
+public class PerType extends BaseEntity {
 }
