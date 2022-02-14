@@ -32,4 +32,5 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements Crud
     public Pet findById(Long id) {
         return findById(id);
     }
+
 }
