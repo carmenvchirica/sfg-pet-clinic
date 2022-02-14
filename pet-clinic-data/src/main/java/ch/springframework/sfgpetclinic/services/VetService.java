@@ -1,11 +1,8 @@
 package ch.springframework.sfgpetclinic.services;
 
 import ch.springframework.sfgpetclinic.model.Vet;
+import org.springframework.data.repository.CrudRepository;
 
-import java.util.Set;
+public interface VetService  extends CrudRepository<Vet, Long> {
 
-public interface VetService {
-    Vet findById(Long id);
-    Vet save(Vet owner);
-    Set<Vet> findAll();
 }
