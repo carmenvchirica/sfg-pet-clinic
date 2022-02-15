@@ -6,6 +6,23 @@
 </head>
 <body>
 
-    <h1 th:text="'List of Pets'"></h1>
+<h2 th:text="'List of Pets'">Pets List</h2>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Id</th>
+        <th style="width: 150px;">Name</th>
+        <th style="width: 150px;">BirthDate</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="pet : ${pets}">
+        <td th:text="${pet.id}">1</td>
+        <td th:text="${pet.name}">Kat</td>
+        <td th:text="${pet.birthDate}"></td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>
