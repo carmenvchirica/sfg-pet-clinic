@@ -53,7 +53,6 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
                     }
                 });
             }
-
             return super.save(object);
 
         } else {
@@ -82,7 +81,6 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public List<Owner> findAllByLastNameLike(String lastName) {
-
         //todo - impl
         return null;
     }
