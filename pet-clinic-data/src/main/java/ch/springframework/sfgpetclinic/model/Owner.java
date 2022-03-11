@@ -35,7 +35,7 @@ public class Owner extends Person {
     private String telephone;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private Set<Pet> pets;
+    private Set<Pet> pets = new HashSet<>();
 
     public Pet getPet(String name, boolean ignoreNew) {
         name = name.toLowerCase();
