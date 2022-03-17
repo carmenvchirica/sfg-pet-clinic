@@ -19,56 +19,100 @@
 	<description>SFG Pet Clinic Project</description>
 	<properties>
 		<java.version>11</java.version>
+		<jaxb.version>3.0.2</jaxb.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-core</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>3.0.2</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<pluginManagement>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-release-plugin</artifactId>
-				<configuration>
-					<goals>install</goals>
-					<checkModificationExcludes>
-						<checkModificationExclude>pom.xml</checkModificationExclude>
-						<checkModificationExclude>.idea/.gitignore</checkModificationExclude>
-						<checkModificationExclude>.idea/compiler.xml</checkModificationExclude>
-						<checkModificationExclude>.idea/encodings.xml</checkModificationExclude>
-						<checkModificationExclude>.idea/jarRepositories.xml</checkModificationExclude>
-						<checkModificationExclude>.idea/misc.xml</checkModificationExclude>
-						<checkModificationExclude>.idea/uiDesigner.xml</checkModificationExclude>
-						<checkModificationExclude>.idea/vcs.xml</checkModificationExclude>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<configuration>
+						<goals>install</goals>
+						<checkModificationExcludes>
+							<checkModificationExclude>pom.xml</checkModificationExclude>
+							<checkModificationExclude>.idea/.gitignore</checkModificationExclude>
+							<checkModificationExclude>.idea/compiler.xml</checkModificationExclude>
+							<checkModificationExclude>.idea/encodings.xml</checkModificationExclude>
+							<checkModificationExclude>.idea/jarRepositories.xml</checkModificationExclude>
+							<checkModificationExclude>.idea/misc.xml</checkModificationExclude>
+							<checkModificationExclude>.idea/uiDesigner.xml</checkModificationExclude>
+							<checkModificationExclude>.idea/vcs.xml</checkModificationExclude>
 
-						<checkModificationExclude>pet-clinic-data/target/maven-archiver/pom.properties</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-data/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-data/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-data/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-data/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-data/target/classes/application.properties</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-data/target/maven-archiver/pom.properties</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-data/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-data/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-data/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-data/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-data/target/classes/application.properties</checkModificationExclude>
 
-						<checkModificationExclude>pet-clinic-web/target/maven-archiver/pom.properties</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-web/target/maven-archiver/pom.properties</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-web/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-web/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-web/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst</checkModificationExclude>
 
-						<checkModificationExclude>pet-clinic-web/target/surefire-reports/TEST-ch.springframework.sfgpetclinic.SfgPetClinicApplicationTests.xml</checkModificationExclude>
-						<checkModificationExclude>pet-clinic-web/target/surefire-reports/ch.springframework.sfgpetclinic.SfgPetClinicApplicationTests.txt</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-web/target/surefire-reports/TEST-ch.springframework.sfgpetclinic.SfgPetClinicApplicationTests.xml</checkModificationExclude>
+							<checkModificationExclude>pet-clinic-web/target/surefire-reports/ch.springframework.sfgpetclinic.SfgPetClinicApplicationTests.txt</checkModificationExclude>
 
 
-					</checkModificationExcludes>
-				</configuration>
-			</plugin>
-<!--			<plugin>-->
-<!--				<configuration>-->
-<!--					<connectionType>developerConnection</connectionType>-->
-<!--				</configuration>-->
-<!--			</plugin>-->
-		</plugins>
+						</checkModificationExcludes>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.22.0</version>
+					<configuration>
+						<argLine>
+							--illegal-access=permit
+						</argLine>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-failsafe-plugin</artifactId>
+					<version>2.22.0</version>
+					<configuration>
+						<argLine>
+							--illegal-access=permit
+						</argLine>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>integration-test</goal>
+								<goal>verify</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
 		</pluginManagement>
 	</build>
 
